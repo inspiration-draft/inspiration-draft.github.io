@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #000000;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-accent: #007aff;
+  --neon-glow: rgba(0, 122, 255, 0.4);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accent-gradient {
+  background: linear-gradient(90deg, #007aff 0%, #34C759 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.nav-links a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+  margin-left: 1.5rem;
+}
+
+.nav-links a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Hero Section */
+.hero {
+  padding: 10rem 2rem 6rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, var(--neon-glow) 0%, transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* App Store Preview */
+.store-preview {
+  max-width: 1280px;
+  margin: 0 auto 3rem;
+  padding: 1rem 2rem 3rem;
+}
+
+.section-kicker {
+  color: #f5a20a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.store-preview h2 {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+}
+
+.store-preview > p {
+  max-width: 720px;
+  margin: 1rem auto 2rem;
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.store-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.store-screenshot-grid figure {
+  margin: 0;
+  padding: 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+    rgba(255,255,255,0.03);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.store-screenshot-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background: #07111f;
+}
+
+.store-screenshot-grid figcaption {
+  padding: 0.75rem 0.25rem 0.25rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Bento Grid */
+.bento-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  overflow: visible;
+  position: relative;
+}
+
+.bento-card:hover {
+  background-color: var(--color-surface-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.bento-item-large {
+  grid-column: span 12;
+}
+
+@media (min-width: 768px) {
+  .bento-item-large { grid-column: span 8; }
+  .bento-item-medium { grid-column: span 4; }
+  .bento-item-full { grid-column: span 12; display: flex; align-items: center; gap: 2rem; }
+}
+
+@media (max-width: 900px) {
+  .store-screenshot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar {
+    padding: 0.9rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.6rem !important;
+  }
+
+  .nav-links a {
+    display: none;
+  }
+
+  .store-preview {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .store-screenshot-grid {
+    display: flex;
+    gap: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    overflow-x: auto;
+    padding: 0 1rem 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .store-screenshot-grid figure {
+    flex: 0 0 76%;
+    scroll-snap-align: center;
+  }
+
+  .bento-card {
+    padding: 1.4rem;
+  }
+}
+
+.bento-card > img,
+.bento-card > * > img:not(.device-watch .screen img):not(.device-phone .screen img) {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover > img,
+.bento-card:hover > * > img:not(.device-watch .screen img):not(.device-phone .screen img) {
+  transform: translateY(-5px);
+}
+
+.card-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Device Mockups (Pure CSS) */
+.device-watch {
+  position: relative; background: #121314; border-radius: 54px; padding: 4px; /* Series 11 ultra-thin edge-to-edge bezel */
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.4), inset 0 -2px 5px rgba(0,0,0,0.9), 0 20px 40px rgba(0,0,0,0.5);
+  border: 1px solid #333; margin-top: 1.5rem; width: 195px; align-self: flex-start;
+}
+.device-watch::after {
+  /* Digital Crown */
+  content: ''; position: absolute; right: -5px; top: 55px; width: 5px; height: 34px;
+  background: #2a2b2c; border-radius: 0 4px 4px 0; border: 1px solid #111; border-left: none; box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
+}
+.device-watch::before {
+  /* Side Button */
+  content: ''; position: absolute; right: -2px; top: 110px; width: 2px; height: 50px;
+  background: #222; border-radius: 0 2px 2px 0;
+}
+.device-watch .screen {
+  border-radius: 50px; overflow: hidden; background: #000; position: relative;
+}
+.device-watch .screen img {
+  width: 100%; height: auto; display: block;
+}
+
+.device-phone {
+  position: relative;
+  width: min(246px, 85%);
+  margin-top: 1.5rem;
+  align-self: center;
+  padding: 7px;
+  border-radius: 15.5% / 7.2%;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.08) 8%, transparent 18%),
+    linear-gradient(155deg, #3d3f43 0%, #15171a 34%, #07080a 55%, #2a2c30 100%);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.08),
+    inset 0 -10px 20px rgba(0,0,0,0.55),
+    inset 0 10px 18px rgba(255,255,255,0.08),
+    0 30px 60px rgba(0,0,0,0.7);
+}
+/* Side Buttons (Action, Volume Up/Down, Power) */
+.device-phone::before {
+  /* Power Button */
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 27%;
+  width: 4px;
+  height: 11.5%;
+  background: linear-gradient(90deg, #0d0e10, #3a3c40);
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset 1px 0 1px rgba(255,255,255,0.14);
+}
+.device-phone::after {
+  /* Action + volume buttons */
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 15%;
+  width: 4px;
+  height: 25%;
+  border-radius: 4px 0 0 4px;
+  background:
+    linear-gradient(
+      to bottom,
+      #34363a 0 15%,
+      transparent 15% 32%,
+      #34363a 32% 60%,
+      transparent 60% 72%,
+      #34363a 72% 100%
+    );
+  box-shadow: inset -1px 0 1px rgba(255,255,255,0.12);
+}
+.device-phone .screen {
+  position: relative;
+  aspect-ratio: 1320 / 2868;
+  overflow: hidden;
+  border-radius: 13.8% / 6.4%;
+  background: #000;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    0 0 0 1px rgba(0,0,0,0.55);
+}
+.device-phone .screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.feature-side-phone {
+  flex: 0 0 min(250px, 34%);
+  margin-top: 0;
+}
+
+.feature-merge-watch {
+  align-self: center;
+  margin-top: 1.25rem;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--color-border);
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--color-text-primary);
+}

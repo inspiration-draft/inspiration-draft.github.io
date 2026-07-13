@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InspirationDraft · 灵感树洞 — Every idea deserves to grow</title>
+  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { padding: 0; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #000; color: #fff; line-height: 1.6; }
+    .text-gradient { background: linear-gradient(90deg, #a8ff78, #78ffd6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    nav { display: flex; align-items: center; gap: 0.75rem; padding: 1.25rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+    
+    /* Hero */
+    .hero { display: flex; align-items: center; gap: 4rem; margin-bottom: 6rem; }
+    .hero-text { flex: 1; }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
+    .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem; }
+    
+    .hero-visual { flex: 1; display: flex; justify-content: center; }
+    .screenshot-frame {
+        width: min(100%, 320px);
+        aspect-ratio: 1320 / 2868;
+        border-radius: 30px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.04);
+        box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+    }
+    .screenshot-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Feature Rows */
+    .feature-row { display: flex; align-items: center; gap: 4rem; margin-bottom: 8rem; }
+    .feature-row:nth-child(even) { flex-direction: row-reverse; }
+    .feature-text { flex: 1; }
+    .feature-text h2 { font-size: 2rem; margin-bottom: 1rem; line-height: 1.25; }
+    .feature-text p { font-size: 1.1rem; color: rgba(255,255,255,0.7); }
+    .feature-visual { flex: 1; display: flex; justify-content: center; }
+    .feature-visual img.screenshot { width: 100%; height: 100%; }
+
+    .methods-list { list-style: none; padding: 0; margin-top: 1.5rem; }
+    .methods-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: rgba(255,255,255,0.8); }
+    .methods-list li::before { content: "•"; color: #a8ff78; position: absolute; left: 0; font-weight: bold; }
+
+    .privacy-section { background: rgba(255,255,255,0.03); border-radius: 24px; padding: 3.5rem 3rem; text-align: center; margin-bottom: 4rem; }
+    .privacy-section h2 { margin-top: 0; font-size: 2rem; }
+
+    footer { text-align: center; padding: 2rem; opacity: 0.5; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    footer a { color: #fff; margin: 0 1rem; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+        .hero, .feature-row, .feature-row:nth-child(even) { flex-direction: column; text-align: center; gap: 3rem; margin-bottom: 5rem; }
+        .hero h1 { font-size: 2.5rem; }
+        .methods-list li { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="site-nav" style="justify-content: space-between;">
+    <div style="display:flex; align-items:center; gap:0.75rem;">
+      <img src="icons/app_icon.png" alt="InspirationDraft Icon" style="width: 32px; height: 32px; border-radius: 8px;">
+      <span data-i18n="nav.brand" style="font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em;">InspirationDraft · 灵感树洞</span>
+    </div>
+    <button onclick="toggleLang()" id="lang-btn" style="background:none; border:1px solid rgba(255,255,255,0.4); color:white; border-radius:12px; padding:4px 12px; cursor:pointer; font-size: 0.9rem;">中文</button>
+  </nav>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <div data-i18n="hero.badge" style="display:inline-block; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-bottom: 1rem; color: rgba(255,255,255,0.6);">Available on iOS</div>
+        <h1 class="text-gradient" data-i18n="hero.title">You do not need<br>to finish the thought</h1>
+        <p data-i18n="hero.p1">Leave the idea here first. Recording inspiration should not feel like another task you have to complete.</p>
+        <p data-i18n="hero.p2">Start with less pressure, then let structure arrive when it helps.</p>
+        <a href="https://apps.apple.com/app/id6772732983" target="_blank" rel="noopener" style="display:inline-block; margin-top: 1rem;">
+          <img id="app-store-badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="height: 44px;">
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="screenshot-frame">
+          <img class="screenshot fancy-screenshot" data-screenshot="1" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-01.png" alt="InspirationDraft home screenshot" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 1: Home Capture -->
+    <section class="feature-row">
+      <div class="feature-text">
+        <h2 data-i18n="feature1.title">Focus on the thought<br>not the admin</h2>
+        <p data-i18n="feature1.p1">Titles, tags, categories, and lightweight structure help you return later without turning capture into clerical work.</p>
+        <p data-i18n="feature1.p2">Organization should sit quietly around the content, not compete with it.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="screenshot-frame">
+          <img class="screenshot fancy-screenshot" data-screenshot="2" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-02.png" alt="InspirationDraft organization screenshot" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 2: Expression Scenarios -->
+    <section class="feature-row">
+      <div class="feature-text">
+        <h2 data-i18n="feature2.title">When you feel stuck<br>open a window</h2>
+        <p data-i18n="feature2.p1">Local AI can extend, question, reframe, and suggest the next step without taking over your writing.</p>
+        <ul class="methods-list">
+          <li data-i18n="feature2.m1"><strong>Extend:</strong> Keep the idea moving when it starts to stall.</li>
+          <li data-i18n="feature2.m2"><strong>Question:</strong> Ask for a sharper angle or a missing constraint.</li>
+          <li data-i18n="feature2.m3"><strong>Reframe:</strong> Try another perspective without losing the core thought.</li>
+          <li data-i18n="feature2.m4"><strong>Next step:</strong> Turn a vague idea into one concrete move.</li>
+          <li data-i18n="feature2.m5"><strong>Control:</strong> AI stays a quiet companion until you decide what to keep.</li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="screenshot-frame">
+          <img class="screenshot fancy-screenshot" data-screenshot="3" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-03.png" alt="InspirationDraft suggestion screenshot" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 3: Version Timeline -->
+    <section class="feature-row">
+      <div class="feature-text">
+        <h2 data-i18n="feature3.title">Take it anywhere<br>and stay private</h2>
+        <p data-i18n="feature3.p1">After the model is downloaded, drafts and local AI inference stay on your iPhone instead of being handed to a cloud model.</p>
+        <p data-i18n="feature3.p2">No signal required. Privacy feels real when the work can continue offline.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="screenshot-frame">
+          <img class="screenshot fancy-screenshot" data-screenshot="4" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-04.png" alt="InspirationDraft local AI screenshot" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 4: Private Local AI -->
+    <section class="feature-row">
+      <div class="feature-text">
+        <h2 data-i18n="feature4.title">Writing, work, life,<br>stray ideas too</h2>
+        <p data-i18n="feature4.p1"><strong>One private workspace:</strong> Keep articles, product notes, cooking sparks, plans, and unfinished thoughts together.</p>
+        <p data-i18n="feature4.p2"><strong>Your voice stays yours:</strong> The final direction and wording always remain in your hands.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="screenshot-frame">
+          <img class="screenshot fancy-screenshot" data-screenshot="5" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-05.png" alt="InspirationDraft ownership screenshot" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy-section">
+      <h2 class="text-gradient" style="margin-bottom: 1rem; display:inline-block;" data-i18n="privacy.title1">Private local AI</h2>
+      <h3 data-i18n="privacy.title2">A quiet creative companion</h3>
+      <p data-i18n="privacy.p1" style="color: rgba(255,255,255,0.7); max-width: 650px; margin: 1.5rem auto 0; font-size: 1.1rem; line-height: 1.8;">
+        InspirationDraft is designed for people who want help without surrendering authorship. <strong>After you download the local model, suggestions and rewrites run on your device.</strong> No account, no tracking, no server-side draft processing.
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <div style="margin-bottom: 1.5rem;">
+      <a href="support.html" data-i18n="footer.support">Support</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="legal/privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+      <a href="legal/terms.html" data-i18n="footer.terms">Terms of Use</a>
+    </div>
+    <div>&copy; 2026 InspirationDraft. All rights reserved.</div>
+  </footer>
+</body>
+</html>
