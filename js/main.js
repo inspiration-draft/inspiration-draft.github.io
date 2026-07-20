@@ -11,28 +11,34 @@ const translations = {
       p2: "Start with less pressure, then let structure arrive when it helps."
     },
     feature1: {
-      title: "Focus on the thought<br>not the admin",
-      p1: "Titles, tags, categories, and lightweight structure help you return later without turning capture into clerical work.",
-      p2: "Organization should sit quietly around the content, not compete with it."
+      title: "Keep the image<br>then make it yours",
+      p1: "Preview, rotate, restore, and turn a useful subject into a sticker. Original images, derivatives, and AI analysis stay linked to the draft.",
+      p2: "The material stays close to the thought instead of becoming another file to lose."
     },
     feature2: {
-      title: "When you feel stuck<br>open a window",
-      p1: "Local AI can extend, question, reframe, and suggest the next step without taking over your writing.",
-      m1: "<strong>Extend:</strong> Keep the idea moving when it starts to stall.",
-      m2: "<strong>Question:</strong> Ask for a sharper angle or a missing constraint.",
-      m3: "<strong>Reframe:</strong> Try another perspective without losing the core thought.",
-      m4: "<strong>Next step:</strong> Turn a vague idea into one concrete move.",
-      m5: "<strong>Control:</strong> AI stays a quiet companion until you decide what to keep."
+      title: "Text and images<br>in the same flow",
+      p1: "Shape a Markdown draft with headings, lists, links, and inline images. Rewrite the words while the image blocks stay protected.",
+      m1: "<strong>Markdown:</strong> Keep the persisted draft source clear and portable.",
+      m2: "<strong>Images:</strong> Place original or derived material where the idea needs it.",
+      m3: "<strong>Rewrite:</strong> Improve the words without losing image structure.",
+      m4: "<strong>Undo:</strong> Keep editing changes reversible while the draft evolves.",
+      m5: "<strong>Control:</strong> Formatting helps the idea without taking it away from you."
     },
     feature3: {
-      title: "Take it anywhere<br>and stay private",
-      p1: "After the model is downloaded, drafts and local AI inference stay on your iPhone instead of being handed to a cloud model.",
-      p2: "No signal required. Privacy feels real when the work can continue offline."
+      title: "From rough thought<br>to readable piece",
+      p1: "Export image-rich drafts as polished PDF or MHTML documents with consistent branding, dates, rounded images, and sticker glow.",
+      p2: "Sharing should carry the shape of the thought, not just a block of raw text."
     },
     feature4: {
-      title: "Writing, work, life,<br>stray ideas too",
-      p1: "<strong>One private workspace:</strong> Keep articles, product notes, cooking sparks, plans, and unfinished thoughts together.",
-      p2: "<strong>Your voice stays yours:</strong> The final direction and wording always remain in your hands."
+      title: "Take it anywhere<br>and stay private",
+      p1: "<strong>Fully local:</strong> After the model is downloaded, drafts and local AI processing stay on your iPhone.",
+      p2: "<strong>Your voice stays yours:</strong> Your images, ideas, and final decisions remain under your control."
+    },
+    materials: {
+      title: "Keep the source, shape the idea",
+      p1: "A real InspirationDraft image can stay beside the thought, then become a focused sticker when the draft needs it.",
+      original: "Original image material · Duolingo × Luckin Coffee",
+      sticker: "Derived subject sticker · ready to place in a draft"
     },
     privacy: {
       title1: "Private local AI",
@@ -56,28 +62,34 @@ const translations = {
       p2: "先减轻压力，再让结构慢慢跟上。"
     },
     feature1: {
-      title: "只管内容<br>整理交给它",
-      p1: "标题、标签、分类和轻量结构应该帮你以后更容易找回来，而不是把记录当下变成填表。",
-      p2: "整理应该轻轻落在内容周围，而不是抢走内容的位置。"
+      title: "先把图片留下<br>再慢慢变成你的",
+      p1: "预览、旋转、还原，并把主体生成贴纸。原图、派生图和 AI 分析结果始终和草稿保持关联。",
+      p2: "素材应该靠近想法，而不是变成另一堆容易丢失的文件。"
     },
     feature2: {
-      title: "灵感枯竭时<br>轻轻推开一扇窗",
-      p1: "本地 AI 可以帮你延伸、追问、换角度、给下一步，但不会接管你的创作过程。",
-      m1: "<strong>延伸：</strong>在想法卡住时继续往前走一点。",
-      m2: "<strong>追问：</strong>补一层更锋利的问题或限制条件。",
-      m3: "<strong>换角度：</strong>试试看另一个看法，而不是重写你。",
-      m4: "<strong>下一步：</strong>把模糊念头落成一个可执行动作。",
-      m5: "<strong>掌控：</strong>AI 只是候选帮助，真正方向始终由你决定。"
+      title: "文字和图片<br>放在同一条创作流里",
+      p1: "用标题、列表、链接和图片块整理 Markdown 草稿；全文改写时保护图片位置，不破坏原来的结构。",
+      m1: "<strong>Markdown：</strong>让正文真源保持清楚、可携带。",
+      m2: "<strong>图片：</strong>把原图或派生素材放在想法真正需要的位置。",
+      m3: "<strong>改写：</strong>优化文字，但不丢失图片结构。",
+      m4: "<strong>撤销：</strong>让编辑变化保持可逆。",
+      m5: "<strong>掌控：</strong>格式让想法更清楚，同时把决定权留在你手里。"
     },
     feature3: {
-      title: "走到世界尽头<br>灵感依然在线",
-      p1: "下载模型后，内容和端侧 AI 推理都留在你的 iPhone 上，不必把想法交给云端大模型。",
-      p2: "没有网络也能继续。当离线仍能工作时，隐私才真的成立。"
+      title: "从粗糙念头<br>到可以阅读的作品",
+      p1: "把图文草稿导出为带有一致 Branding、日期、圆角图片和 Sticker Glow 的 PDF 或 MHTML。",
+      p2: "分享应该带走想法的形状，而不只是导出一段原始文字。"
     },
     feature4: {
-      title: "写作、工作、生活、奇想<br>都能放进来",
-      p1: "<strong>一个私密空间：</strong>文章、产品想法、下厨灵感、日常计划和零散念头，都可以放在一起慢慢长大。",
-      p2: "<strong>你的声音还在：</strong>最终的表达和判断始终属于你。"
+      title: "走到世界尽头<br>灵感依然在线",
+      p1: "<strong>完全本地：</strong>下载模型后，文字、图片上下文和端侧 AI 推理都留在 iPhone 上。",
+      p2: "<strong>你的声音还在：</strong>图片、想法和最终判断始终由你掌控。"
+    },
+    materials: {
+      title: "保留原始素材，再塑造想法",
+      p1: "真实的灵感树洞图片可以和想法一起留下；需要时，再把主体变成适合放进草稿的贴纸。",
+      original: "原始图片素材 · 多邻国 × 瑞幸",
+      sticker: "派生主体贴纸 · 可以放回草稿继续创作"
     },
     privacy: {
       title1: "完全本地，真正私密",

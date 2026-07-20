@@ -43,6 +43,16 @@
     .feature-visual { flex: 1; display: flex; justify-content: center; }
     .feature-visual img.screenshot { width: 100%; height: 100%; }
 
+    .materials-section { margin: 0 0 8rem; }
+    .materials-header { max-width: 680px; margin-bottom: 2rem; }
+    .materials-header h2 { font-size: 2rem; margin: 0 0 1rem; }
+    .materials-header p { color: rgba(255,255,255,0.7); font-size: 1.1rem; }
+    .materials-gallery { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1.5rem; align-items: stretch; }
+    .material-card { margin: 0; padding: 0.75rem; border-radius: 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+    .material-card img { display: block; width: 100%; height: 100%; min-height: 280px; object-fit: cover; border-radius: 18px; }
+    .material-card.sticker img { object-fit: contain; background: radial-gradient(circle, rgba(168,255,120,0.18), rgba(0,0,0,0.2) 70%); }
+    .material-card figcaption { padding: 0.8rem 0.25rem 0.15rem; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
     .methods-list { list-style: none; padding: 0; margin-top: 1.5rem; }
     .methods-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: rgba(255,255,255,0.8); }
     .methods-list li::before { content: "•"; color: #a8ff78; position: absolute; left: 0; font-weight: bold; }
@@ -58,6 +68,8 @@
         .hero, .feature-row, .feature-row:nth-child(even) { flex-direction: column; text-align: center; gap: 3rem; margin-bottom: 5rem; }
         .hero h1 { font-size: 2.5rem; }
         .methods-list li { text-align: left; }
+        .materials-gallery { grid-template-columns: 1fr; }
+        .material-card img { min-height: 220px; }
     }
   </style>
 </head>
@@ -89,7 +101,25 @@
       </div>
     </section>
 
-    <!-- Feature 1: Home Capture -->
+    <!-- Real device material example -->
+    <section class="materials-section">
+      <div class="materials-header">
+        <h2 class="text-gradient" data-i18n="materials.title">Keep the source, shape the idea</h2>
+        <p data-i18n="materials.p1">A real InspirationDraft image can stay beside the thought, then become a focused sticker when the draft needs it.</p>
+      </div>
+      <div class="materials-gallery">
+        <figure class="material-card">
+          <img src="assets/image-materials/duolingo-luckin-original.jpg" alt="Duolingo and Luckin Coffee collaboration image material from InspirationDraft" loading="lazy">
+          <figcaption data-i18n="materials.original">Original image material · Duolingo × Luckin Coffee</figcaption>
+        </figure>
+        <figure class="material-card sticker">
+          <img src="assets/image-materials/duolingo-luckin-sticker.png" alt="Derived sticker from a Duolingo and Luckin Coffee image" loading="lazy">
+          <figcaption data-i18n="materials.sticker">Derived subject sticker · ready to place in a draft</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Feature 1: Image Materials -->
     <section class="feature-row">
       <div class="feature-text">
         <h2 data-i18n="feature1.title">Focus on the thought<br>not the admin</h2>
@@ -103,7 +133,7 @@
       </div>
     </section>
 
-    <!-- Feature 2: Expression Scenarios -->
+    <!-- Feature 2: Markdown Image Editing -->
     <section class="feature-row">
       <div class="feature-text">
         <h2 data-i18n="feature2.title">When you feel stuck<br>open a window</h2>
@@ -123,7 +153,7 @@
       </div>
     </section>
 
-    <!-- Feature 3: Version Timeline -->
+    <!-- Feature 3: Rich Export -->
     <section class="feature-row">
       <div class="feature-text">
         <h2 data-i18n="feature3.title">Take it anywhere<br>and stay private</h2>
