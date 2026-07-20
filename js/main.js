@@ -40,11 +40,6 @@ const translations = {
       original: "Original image material · Duolingo × Luckin Coffee",
       sticker: "Derived subject sticker · ready to place in a draft"
     },
-    branding: {
-      title: "Keep the source. Shape the idea.",
-      p1: "A new bilingual brand card built from real device production materials: original images, subject stickers, and room for the idea to grow.",
-      caption: "MVP33 branding card · real production materials and subject stickers"
-    },
     privacy: {
       title1: "Private local AI",
       title2: "A quiet creative companion",
@@ -95,11 +90,6 @@ const translations = {
       p1: "真实的灵感树洞图片可以和想法一起留下；需要时，再把主体变成适合放进草稿的贴纸。",
       original: "原始图片素材 · 多邻国 × 瑞幸",
       sticker: "派生主体贴纸 · 可以放回草稿继续创作"
-    },
-    branding: {
-      title: "保留原始素材，再塑造想法。",
-      p1: "用真机生产素材生成新的双语品牌图：原图、主体贴纸，以及给灵感继续生长的空间。",
-      caption: "MVP33 品牌图 · 真机生产素材与主体贴纸"
     },
     privacy: {
       title1: "完全本地，真正私密",
@@ -187,16 +177,6 @@ function updateScreenshots() {
   });
 }
 
-function updateBranding() {
-  const branding = document.getElementById('branding-card');
-  if (branding) {
-    branding.src = `assets/branding/inspirationdraft-mvp33-branding-${currentLang}.jpg`;
-    branding.alt = currentLang === 'zh'
-      ? '使用多邻国与瑞幸真机生产素材的灵感树洞中文品牌图'
-      : 'InspirationDraft English branding card using real Duolingo and Luckin Coffee production materials';
-  }
-}
-
 // Init
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('lang-btn').innerText = currentLang === 'zh' ? 'English' : '中文';
@@ -205,5 +185,4 @@ document.addEventListener('DOMContentLoaded', () => {
   updateMeta();
   updateBadge();
   updateScreenshots();
-  updateBranding();
 });

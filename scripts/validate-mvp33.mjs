@@ -24,8 +24,6 @@ for (const relativePath of [
   'icons/app_icon.png',
   'assets/image-materials/duolingo-luckin-original.jpg',
   'assets/image-materials/duolingo-luckin-sticker.png',
-  'assets/branding/inspirationdraft-mvp33-branding-en.jpg',
-  'assets/branding/inspirationdraft-mvp33-branding-zh.jpg',
   'appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-01.png',
   'appstore/inspirationdraft-fancy-screenshots/output/zh-Hans/iphone-6.9-01.png',
 ]) {
