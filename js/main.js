@@ -11,9 +11,9 @@ const translations = {
       p2: "Start with less pressure, then let structure arrive when it helps."
     },
     feature1: {
-      title: "Focus on the thought<br>not the admin",
+      title: "Capture the thought<br>then make it useful",
       p1: "Titles, tags, categories, and lightweight structure help you return later without turning capture into clerical work.",
-      p2: "Organization should sit quietly around the content, not compete with it."
+      p2: "Organize an idea in the background, or turn it into one or more reminders when it is ready to become a next step."
     },
     feature2: {
       title: "When you feel stuck<br>open a window",
@@ -56,9 +56,9 @@ const translations = {
       p2: "先减轻压力，再让结构慢慢跟上。"
     },
     feature1: {
-      title: "只管内容<br>整理交给它",
+      title: "先留下想法<br>再把它变得有用",
       p1: "标题、标签、分类和轻量结构应该帮你以后更容易找回来，而不是把记录当下变成填表。",
-      p2: "整理应该轻轻落在内容周围，而不是抢走内容的位置。"
+      p2: "可以让它在后台补齐整理，也可以在想法准备好行动时，把它转换成一条或多条提醒事项。"
     },
     feature2: {
       title: "灵感枯竭时<br>轻轻推开一扇窗",
