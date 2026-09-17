@@ -7,18 +7,19 @@
   <script src="js/main.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    body { padding: 0; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #000; color: #fff; line-height: 1.6; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { padding: 0; margin: 0; width: 100%; overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #000; color: #fff; line-height: 1.6; }
     .text-gradient { background: linear-gradient(90deg, #a8ff78, #78ffd6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    nav { display: flex; align-items: center; gap: 0.75rem; padding: 1.25rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+    nav { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 1.25rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
     
     /* Hero */
     .hero { display: flex; align-items: center; gap: 4rem; margin-bottom: 6rem; }
-    .hero-text { flex: 1; }
+    .hero-text { flex: 1; min-width: 0; }
     .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
     .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem; }
     
-    .hero-visual { flex: 1; display: flex; justify-content: center; }
+    .hero-visual { flex: 1; min-width: 0; display: flex; justify-content: center; }
     .screenshot-frame {
         width: min(100%, 320px);
         aspect-ratio: 1320 / 2868;
@@ -37,11 +38,11 @@
     /* Feature Rows */
     .feature-row { display: flex; align-items: center; gap: 4rem; margin-bottom: 8rem; }
     .feature-row:nth-child(even) { flex-direction: row-reverse; }
-    .feature-text { flex: 1; }
+    .feature-text { flex: 1; min-width: 0; }
     .feature-text h2 { font-size: 2rem; margin-bottom: 1rem; line-height: 1.25; }
     .feature-text p { font-size: 1.1rem; color: rgba(255,255,255,0.7); }
-    .feature-visual { flex: 1; display: flex; justify-content: center; }
-    .feature-visual img.screenshot { width: 100%; height: 100%; }
+    .feature-visual { flex: 1; min-width: 0; display: flex; justify-content: center; width: 100%; }
+    .feature-visual img.screenshot { width: 100%; max-width: 100%; height: 100%; }
 
     .methods-list { list-style: none; padding: 0; margin-top: 1.5rem; }
     .methods-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: rgba(255,255,255,0.8); }
@@ -55,7 +56,11 @@
     footer a:hover { text-decoration: underline; }
 
     @media (max-width: 768px) {
+        .container { padding: 3rem 1rem; }
         .hero, .feature-row, .feature-row:nth-child(even) { flex-direction: column; text-align: center; gap: 3rem; margin-bottom: 5rem; }
+        .hero, .feature-row { width: 100%; }
+        .hero-text, .feature-text, .hero-visual, .feature-visual { width: 100%; }
+        .screenshot-frame { width: min(100%, 320px); }
         .hero h1 { font-size: 2.5rem; }
         .methods-list li { text-align: left; }
     }
@@ -89,31 +94,39 @@
       </div>
     </section>
 
-    <!-- Feature 1: Capture and organize -->
+    <!-- Feature 1: Offline AI creative methods -->
     <section class="feature-row">
       <div class="feature-text">
-        <h2 data-i18n="feature1.title">Capture the thought<br>then make it useful</h2>
-        <p data-i18n="feature1.p1">Titles, tags, categories, and lightweight structure help you return later without turning capture into clerical work.</p>
-        <p data-i18n="feature1.p2">Organize an idea in the background, or turn it into one or more reminders when it is ready to become a next step.</p>
+        <h2 data-i18n="feature1.title">When a spark needs room<br>let offline AI open a door</h2>
+        <p data-i18n="feature1.p1">Five gentle ways to keep creating when the first thought is not finished. Offline AI offers a direction, not a replacement for your voice.</p>
+        <ul class="methods-list">
+          <li data-i18n="feature1.m1"><strong>Extend:</strong> Add texture, detail, or a possible continuation without forcing the idea to conclude.</li>
+          <li data-i18n="feature1.m2"><strong>Change angle:</strong> Look at the same spark from another person, time, scale, or point of view.</li>
+          <li data-i18n="feature1.m3"><strong>Make concrete:</strong> Move from atmosphere to specifics: a scene, an example, a constraint, or a testable detail.</li>
+          <li data-i18n="feature1.m4"><strong>Next step:</strong> Turn a vague impulse into one small action that gives the idea somewhere to go.</li>
+          <li data-i18n="feature1.m5"><strong>Ask back:</strong> Let a well-placed question reveal what the spark is really trying to become.</li>
+        </ul>
+        <p data-i18n="feature1.p2">The model helps you find a way forward while the spark, the choice, and the final direction remain yours.</p>
       </div>
       <div class="feature-visual">
         <div class="screenshot-frame">
-          <img class="screenshot fancy-screenshot" data-screenshot="2" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-02.png" alt="InspirationDraft organization screenshot" loading="lazy">
+          <img class="screenshot fancy-screenshot" data-screenshot="2" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-02.png" alt="InspirationDraft image and text editing screenshot" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- Feature 2: Markdown Image Editing -->
+    <!-- Feature 2: Material menu actions -->
     <section class="feature-row">
       <div class="feature-text">
-        <h2 data-i18n="feature2.title">When you feel stuck<br>open a window</h2>
-        <p data-i18n="feature2.p1">Local AI can extend, question, reframe, and suggest the next step without taking over your writing.</p>
+        <h2 data-i18n="feature2.title">Let offline AI<br>understand the image</h2>
+        <p data-i18n="feature2.p1">Offline AI helps you notice what is in the image and find extra inspiration or new ways to express the thought. Your image stays on your device.</p>
         <ul class="methods-list">
-          <li data-i18n="feature2.m1"><strong>Extend:</strong> Keep the idea moving when it starts to stall.</li>
-          <li data-i18n="feature2.m2"><strong>Question:</strong> Ask for a sharper angle or a missing constraint.</li>
-          <li data-i18n="feature2.m3"><strong>Reframe:</strong> Try another perspective without losing the core thought.</li>
-          <li data-i18n="feature2.m4"><strong>Next step:</strong> Turn a vague idea into one concrete move.</li>
-          <li data-i18n="feature2.m5"><strong>Control:</strong> AI stays a quiet companion until you decide what to keep.</li>
+          <li data-i18n="feature2.m1"><strong>Get Image Content:</strong> Let offline AI describe what is in the image and open another way into the thought.</li>
+          <li data-i18n="feature2.m2"><strong>Insert into Document:</strong> Bring the useful context into the draft at the point where it matters.</li>
+          <li data-i18n="feature2.m3"><strong>Create Sticker:</strong> Use a derived form only when it helps the idea, without making it the point of the story.</li>
+          <li data-i18n="feature2.m4"><strong>Delete analysis results:</strong> Remove generated interpretation when it no longer belongs.</li>
+          <li data-i18n="feature2.m5"><strong>Remove Cover:</strong> Change the role of the material without deleting the attachment.</li>
+          <li data-i18n="feature2.m6"><strong>Delete attachment:</strong> Remove the material only when you decide it should leave the idea.</li>
         </ul>
       </div>
       <div class="feature-visual">
@@ -123,40 +136,54 @@
       </div>
     </section>
 
-    <!-- Feature 3: Rich Export -->
+    <!-- Feature 3: Offline AI rewrite -->
     <section class="feature-row">
       <div class="feature-text">
-        <h2 data-i18n="feature3.title">Take it anywhere<br>and stay private</h2>
-        <p data-i18n="feature3.p1">After the model is downloaded, drafts and local AI inference stay on your iPhone instead of being handed to a cloud model.</p>
-        <p data-i18n="feature3.p2">No signal required. Privacy feels real when the work can continue offline.</p>
+        <h2 data-i18n="feature3.title">Let offline AI explore<br>without taking over</h2>
+        <p data-i18n="feature3.p1">Try different rewrite directions and keep the candidate that fits. Text can change while the image blocks and the original thought stay protected.</p>
+        <p data-i18n="feature3.p2">Offline AI opens possibilities; the final wording and direction remain yours.</p>
       </div>
       <div class="feature-visual">
         <div class="screenshot-frame">
-          <img class="screenshot fancy-screenshot" data-screenshot="4" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-04.png" alt="InspirationDraft local AI screenshot" loading="lazy">
+          <img class="screenshot fancy-screenshot" data-screenshot="4" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-04.png" alt="InspirationDraft smart rewrite screenshot" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- Feature 4: Private Local AI -->
+    <!-- Feature 4: Settings and control -->
     <section class="feature-row">
       <div class="feature-text">
-        <h2 data-i18n="feature4.title">Writing, work, life,<br>stray ideas too</h2>
-        <p data-i18n="feature4.p1"><strong>One private workspace:</strong> Keep articles, product notes, cooking sparks, plans, and unfinished thoughts together.</p>
-        <p data-i18n="feature4.p2"><strong>Your voice stays yours:</strong> The final direction and wording always remain in your hands.</p>
+        <h2 data-i18n="feature4.title">You decide how far<br>offline AI goes</h2>
+        <p data-i18n="feature4.p1">Choose whether offline AI only suggests a title, helps organize tags and scenes, or steps in with writing assistance. It can help manage a growing collection of sparks without taking over.</p>
+        <p data-i18n="feature4.p2">You set the boundary: capture only, organize, or help develop the idea.</p>
       </div>
       <div class="feature-visual">
         <div class="screenshot-frame">
-          <img class="screenshot fancy-screenshot" data-screenshot="5" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-05.png" alt="InspirationDraft ownership screenshot" loading="lazy">
+          <img class="screenshot fancy-screenshot" data-screenshot="5" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-05.png" alt="InspirationDraft settings and offline AI screenshot" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 5: Private offline AI -->
+    <section class="feature-row">
+      <div class="feature-text">
+        <h2 data-i18n="feature5.title">Keep creating<br>and keep it private</h2>
+        <p data-i18n="feature5.p1"><strong>Fully local:</strong> Suggestions and rewrites run on your iPhone instead of sending your unfinished ideas to a server.</p>
+        <p data-i18n="feature5.p2">Your voice, your images, and the sparks that are still becoming ideas stay under your control.</p>
+      </div>
+      <div class="feature-visual">
+        <div class="screenshot-frame">
+          <img class="screenshot fancy-screenshot" data-screenshot="6" src="appstore/inspirationdraft-fancy-screenshots/output/en/iphone-6.9-06.png" alt="InspirationDraft private offline AI screenshot" loading="lazy">
         </div>
       </div>
     </section>
 
     <!-- Privacy Section -->
     <section class="privacy-section">
-      <h2 class="text-gradient" style="margin-bottom: 1rem; display:inline-block;" data-i18n="privacy.title1">Private local AI</h2>
+      <h2 class="text-gradient" style="margin-bottom: 1rem; display:inline-block;" data-i18n="privacy.title1">Private offline AI</h2>
       <h3 data-i18n="privacy.title2">A quiet creative companion</h3>
       <p data-i18n="privacy.p1" style="color: rgba(255,255,255,0.7); max-width: 650px; margin: 1.5rem auto 0; font-size: 1.1rem; line-height: 1.8;">
-        InspirationDraft is designed for people who want help without surrendering authorship. <strong>After you download the local model, suggestions and rewrites run on your device.</strong> No account, no tracking, no server-side draft processing.
+        InspirationDraft is designed for people who want help without surrendering authorship. <strong>Suggestions and rewrites run on your device.</strong> No account, no tracking, no server-side draft processing.
       </p>
     </section>
 
