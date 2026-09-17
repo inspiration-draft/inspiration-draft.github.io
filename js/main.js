@@ -34,12 +34,6 @@ const translations = {
       p1: "<strong>Fully local:</strong> After the model is downloaded, drafts and local AI processing stay on your iPhone.",
       p2: "<strong>Your voice stays yours:</strong> Your images, ideas, and final decisions remain under your control."
     },
-    materials: {
-      title: "Keep the source, shape the idea",
-      p1: "A real InspirationDraft image can stay beside the thought, then become a focused sticker when the draft needs it.",
-      original: "Original image material · Duolingo × Luckin Coffee",
-      sticker: "Derived subject sticker · ready to place in a draft"
-    },
     privacy: {
       title1: "Private local AI",
       title2: "A quiet creative companion",
@@ -84,12 +78,6 @@ const translations = {
       title: "走到世界尽头<br>灵感依然在线",
       p1: "<strong>完全本地：</strong>下载模型后，文字、图片上下文和端侧 AI 推理都留在 iPhone 上。",
       p2: "<strong>你的声音还在：</strong>图片、想法和最终判断始终由你掌控。"
-    },
-    materials: {
-      title: "保留原始素材，再塑造想法",
-      p1: "真实的灵感树洞图片可以和想法一起留下；需要时，再把主体变成适合放进草稿的贴纸。",
-      original: "原始图片素材 · 多邻国 × 瑞幸",
-      sticker: "派生主体贴纸 · 可以放回草稿继续创作"
     },
     privacy: {
       title1: "完全本地，真正私密",
