@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>InspirationDraft · 灵感树洞 — Every idea deserves to grow</title>
   <script src="js/main.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    body { padding: 0; margin: 0; width: 100%; overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #000; color: #fff; line-height: 1.6; }
-    .text-gradient { background: linear-gradient(90deg, #a8ff78, #78ffd6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    nav { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 1.25rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
+    body { padding: 0; margin: 0; width: 100%; overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--color-bg); color: var(--color-text-primary); line-height: 1.6; }
+    .text-gradient { color: var(--id-heading-gradient); -webkit-text-fill-color: currentColor; background: none; }
+    nav { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 1.25rem 2rem; border-bottom: 1px solid var(--id-line); background: var(--id-nav); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
     .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
     
     /* Hero */
     .hero { display: flex; align-items: center; gap: 4rem; margin-bottom: 6rem; }
     .hero-text { flex: 1; min-width: 0; }
     .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
-    .hero p { font-size: 1.2rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem; }
+    .hero p { font-size: 1.2rem; color: var(--color-text-secondary); margin-bottom: 2rem; }
     
     .hero-visual { flex: 1; min-width: 0; display: flex; justify-content: center; }
     .screenshot-frame {
@@ -25,8 +26,8 @@
         aspect-ratio: 1320 / 2868;
         border-radius: 30px;
         overflow: hidden;
-        background: rgba(255,255,255,0.04);
-        box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+        background: var(--color-surface);
+        box-shadow: var(--id-screenshot-shadow);
     }
     .screenshot-frame img {
         display: block;
@@ -40,19 +41,19 @@
     .feature-row:nth-child(even) { flex-direction: row-reverse; }
     .feature-text { flex: 1; min-width: 0; }
     .feature-text h2 { font-size: 2rem; margin-bottom: 1rem; line-height: 1.25; }
-    .feature-text p { font-size: 1.1rem; color: rgba(255,255,255,0.7); }
+    .feature-text p { font-size: 1.1rem; color: var(--color-text-secondary); }
     .feature-visual { flex: 1; min-width: 0; display: flex; justify-content: center; width: 100%; }
     .feature-visual img.screenshot { width: 100%; max-width: 100%; height: 100%; }
 
     .methods-list { list-style: none; padding: 0; margin-top: 1.5rem; }
-    .methods-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: rgba(255,255,255,0.8); }
-    .methods-list li::before { content: "•"; color: #a8ff78; position: absolute; left: 0; font-weight: bold; }
+    .methods-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: var(--id-subtle); }
+    .methods-list li::before { content: "•"; color: var(--color-accent); position: absolute; left: 0; font-weight: bold; }
 
-    .privacy-section { background: rgba(255,255,255,0.03); border-radius: 24px; padding: 3.5rem 3rem; text-align: center; margin-bottom: 4rem; }
+    .privacy-section { background: var(--id-privacy-surface); border-radius: 24px; padding: 3.5rem 3rem; text-align: center; margin-bottom: 4rem; }
     .privacy-section h2 { margin-top: 0; font-size: 2rem; }
 
-    footer { text-align: center; padding: 2rem; opacity: 0.5; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
-    footer a { color: #fff; margin: 0 1rem; text-decoration: none; }
+    footer { text-align: center; padding: 2rem; opacity: 0.5; font-size: 0.9rem; border-top: 1px solid var(--id-line); }
+    footer a { color: var(--color-text-primary); margin: 0 1rem; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
     @media (max-width: 768px) {
@@ -72,14 +73,14 @@
       <img src="icons/app_icon.png" alt="InspirationDraft Icon" style="width: 32px; height: 32px; border-radius: 8px;">
       <span data-i18n="nav.brand" style="font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em;">InspirationDraft · 灵感树洞</span>
     </div>
-    <button onclick="toggleLang()" id="lang-btn" style="background:none; border:1px solid rgba(255,255,255,0.4); color:white; border-radius:12px; padding:4px 12px; cursor:pointer; font-size: 0.9rem;">中文</button>
+    <button onclick="toggleLang()" id="lang-btn" style="background:none; border:1px solid var(--color-border); color: var(--color-text-primary); border-radius:12px; padding:4px 12px; cursor:pointer; font-size: 0.9rem;">中文</button>
   </nav>
 
   <div class="container">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-text">
-        <div data-i18n="hero.badge" style="display:inline-block; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-bottom: 1rem; color: rgba(255,255,255,0.6);">Available on iOS</div>
+        <div data-i18n="hero.badge" style="display:inline-block; border: 1px solid var(--color-border); border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-bottom: 1rem; color: var(--id-muted);">Available on iOS</div>
         <h1 class="text-gradient" data-i18n="hero.title">You do not need<br>to finish the thought</h1>
         <p data-i18n="hero.p1">Leave the idea here first. Recording inspiration should not feel like another task you have to complete.</p>
         <p data-i18n="hero.p2">Start with less pressure, then let structure arrive when it helps.</p>
@@ -182,7 +183,7 @@
     <section class="privacy-section">
       <h2 class="text-gradient" style="margin-bottom: 1rem; display:inline-block;" data-i18n="privacy.title1">Private offline AI</h2>
       <h3 data-i18n="privacy.title2">A quiet creative companion</h3>
-      <p data-i18n="privacy.p1" style="color: rgba(255,255,255,0.7); max-width: 650px; margin: 1.5rem auto 0; font-size: 1.1rem; line-height: 1.8;">
+      <p data-i18n="privacy.p1" style="color: var(--color-text-secondary); max-width: 650px; margin: 1.5rem auto 0; font-size: 1.1rem; line-height: 1.8;">
         InspirationDraft is designed for people who want help without surrendering authorship. <strong>Suggestions and rewrites run on your device.</strong> No account, no tracking, no server-side draft processing.
       </p>
     </section>
