@@ -34,8 +34,8 @@ const copy = {
     languageButton: "English",
     heroAlt: "三款 App 的日常使用场景：灵感树洞、旅途中的备问，以及时扣会议回顾。",
     inspirationAlt: "手机显示灵感树洞中的灵感卡片，旁边的笔记本上长出微光枝叶。",
-    beiwenAlt: "旅途中，用户在车站查看手机。",
-    wristmarkAlt: "方形手表、手机与谈话场景，表达记录会议后再回顾。"
+    beiwenAlt: "旅途中，用户在车站查看显示备问界面的手机。",
+    wristmarkAlt: "谈话桌边的手表显示清晰的时扣标志，手机展示会议回顾。"
   },
   en: {
     pageTitle: "Ideas, questions, and meetings — InspirationDraft · Beiwen · WristMark",
@@ -72,8 +72,8 @@ const copy = {
     languageButton: "中文",
     heroAlt: "Three everyday app scenes: saving an idea, using Beiwen while traveling, and reviewing a WristMark meeting.",
     inspirationAlt: "An iPhone displays InspirationDraft idea cards beside a notebook with a glowing sprout.",
-    beiwenAlt: "A traveler checks a phone in a station.",
-    wristmarkAlt: "A square smartwatch, phone, and a conversation at a meeting table."
+    beiwenAlt: "A traveler checks a phone displaying the Beiwen app at a station.",
+    wristmarkAlt: "At a meeting table, the watch displays the clear WristMark mark while the phone shows a meeting recap."
   }
 };
 
