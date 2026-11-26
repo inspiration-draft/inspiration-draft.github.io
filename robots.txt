@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inspiration-draft.github.io/sitemap.xml

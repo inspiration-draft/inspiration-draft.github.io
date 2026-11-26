@@ -4,12 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>InspirationDraft · 灵感树洞 — Every idea deserves to grow</title>
+  <title>InspirationDraft — Every idea deserves to grow</title>
+  <meta name="description" content="Capture ideas as they come, then organize and develop them when you're ready. Optional on-device AI offers creative directions.">
+  <link rel="canonical" href="https://inspiration-draft.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InspirationDraft">
+  <meta property="og:url" content="https://inspiration-draft.github.io/">
+  <meta property="og:title" content="InspirationDraft — Every idea deserves to grow">
+  <meta property="og:description" content="Capture ideas as they come, then organize and develop them when you're ready. Optional on-device AI offers creative directions.">
+  <meta property="og:image" content="https://inspiration-draft.github.io/icons/app_icon.png">
+  <meta property="og:image:alt" content="InspirationDraft app icon">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="InspirationDraft — Every idea deserves to grow">
+  <meta name="twitter:description" content="Capture ideas as they come, then organize and develop them when you're ready. Optional on-device AI offers creative directions.">
+  <meta name="twitter:image" content="https://inspiration-draft.github.io/icons/app_icon.png">
+  <meta name="twitter:image:alt" content="InspirationDraft app icon">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://inspiration-draft.github.io/#website",
+          "url": "https://inspiration-draft.github.io/",
+          "name": "InspirationDraft"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://inspiration-draft.github.io/#application",
+          "url": "https://inspiration-draft.github.io/",
+          "name": "InspirationDraft",
+          "operatingSystem": "iOS",
+          "description": "Capture ideas as they come, then organize and develop them when you're ready. Optional on-device AI offers creative directions.",
+          "downloadUrl": "https://apps.apple.com/app/id6772732983",
+          "image": "https://inspiration-draft.github.io/icons/app_icon.png"
+        }
+      ]
+    }
+  </script>
   <script src="js/main.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    body { padding: 0; margin: 0; width: 100%; overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--color-bg); color: var(--color-text-primary); line-height: 1.6; }
+    body { padding: 0; margin: 0; width: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--color-bg); color: var(--color-text-primary); line-height: 1.6; }
     .text-gradient { color: var(--id-heading-gradient); -webkit-text-fill-color: currentColor; background: none; }
     nav { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 1.25rem 2rem; border-bottom: 1px solid var(--id-line); background: var(--id-nav); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
     .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
@@ -55,10 +93,17 @@
     footer { text-align: center; padding: 2rem; opacity: 0.5; font-size: 0.9rem; border-top: 1px solid var(--id-line); }
     footer a { color: var(--color-text-primary); margin: 0 1rem; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+    footer img { max-width: 100%; height: auto; }
+
+    @media (max-width: 1024px) {
+        nav { position: static; top: auto; }
+        .hero::before { width: calc(100% - 44px); }
+    }
 
     @media (max-width: 768px) {
         .container { padding: 3rem 1rem; }
         .hero, .feature-row, .feature-row:nth-child(even) { flex-direction: column; text-align: center; gap: 3rem; margin-bottom: 5rem; }
+        .hero { padding: 0; }
         .hero, .feature-row { width: 100%; }
         .hero-text, .feature-text, .hero-visual, .feature-visual { width: 100%; }
         .screenshot-frame { width: min(100%, 320px); }
@@ -74,9 +119,9 @@
   <nav id="site-nav" style="justify-content: space-between;">
     <div style="display:flex; align-items:center; gap:0.75rem;">
       <img src="icons/app_icon.png" alt="InspirationDraft Icon" style="width: 32px; height: 32px; border-radius: 8px;">
-      <span data-i18n="nav.brand" style="font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em;">InspirationDraft · 灵感树洞</span>
+      <span data-i18n="nav.brand" style="font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em;">InspirationDraft</span>
     </div>
-    <button onclick="toggleLang()" id="lang-btn" style="background:none; border:1px solid var(--color-border); color: var(--color-text-primary); border-radius:12px; padding:4px 12px; cursor:pointer; font-size: 0.9rem;">中文</button>
+    <button onclick="toggleLang()" id="lang-btn" style="background:none; border:1px solid var(--color-border); color: var(--color-text-primary); border-radius:12px; padding:4px 12px; cursor:pointer; font-size: 0.9rem;">Chinese</button>
   </nav>
 
   <div class="container">
@@ -192,6 +237,63 @@
     </section>
 
   </div>
+
+  <section class="other-apps-section" aria-labelledby="other-apps-title">
+    <div class="other-apps-heading">
+      <h2 id="other-apps-title" data-i18n="apps.title">Explore our other apps</h2>
+      <a href="campaign/three-apps/" data-i18n="apps.campaignLink">See the InspirationDraft, Beiwen, and WristMark collection</a>
+    </div>
+    <ul class="other-apps-list">
+      <li class="other-app-item">
+        <div class="other-app-item-heading">
+          <img class="other-app-icon" src="/app-icons/lexisprig.png" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <h3 data-i18n="apps.lexisprigName">LexiSprig</h3>
+        </div>
+        <p data-i18n="apps.lexisprigDescription">Turn everyday scenes into multilingual word cards, short stories, and example sentences.</p>
+        <a href="https://lexisprig-app.github.io/" data-i18n="apps.lexisprigLink">Visit LexiSprig</a>
+      </li>
+      <li class="other-app-item">
+        <div class="other-app-item-heading">
+          <img class="other-app-icon" src="/app-icons/displaypreset.png" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <h3 data-i18n="apps.displayPresetName">DisplayPreset</h3>
+        </div>
+        <p data-i18n="apps.displayPresetDescription">Save and restore your connected display configuration on macOS, with one click.</p>
+        <a href="https://displayset.github.io/" data-href-en="https://displayset.github.io/" data-href-zh="https://displayset.github.io/zh-hans.html" data-i18n="apps.displayPresetLink">Visit DisplayPreset</a>
+      </li>
+      <li class="other-app-item">
+        <div class="other-app-item-heading">
+          <img class="other-app-icon" src="/app-icons/displaypilot.png" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <h3 data-i18n="apps.displayPilotName">DisplayPilot</h3>
+        </div>
+        <p data-i18n="apps.displayPilotDescription">Save and restore window layouts and app workspaces across your Mac displays.</p>
+        <a href="https://displayset.github.io/displaypilot.html" data-href-en="https://displayset.github.io/displaypilot.html" data-href-zh="https://displayset.github.io/zh-hans-displaypilot.html" data-i18n="apps.displayPilotLink">Visit DisplayPilot</a>
+      </li>
+      <li class="other-app-item">
+        <div class="other-app-item-heading">
+          <img class="other-app-icon" src="/app-icons/scriptpace.png" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <h3 data-i18n="apps.scriptPaceName">ScriptPace</h3>
+        </div>
+        <p data-i18n="apps.scriptPaceDescription">A local-first voice-tracking teleprompter for Mac, with iPhone rehearsal and Apple Watch remote control.</p>
+        <a href="https://scriptpace.github.io/" data-i18n="apps.scriptPaceLink">Visit ScriptPace</a>
+      </li>
+      <li class="other-app-item">
+        <div class="other-app-item-heading">
+          <img class="other-app-icon" src="/app-icons/beiwen.png" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <h3 data-i18n="apps.beiwenName">Beiwen</h3>
+        </div>
+        <p data-i18n="apps.beiwenDescription">An offline-first emergency AI assistant for on-device questions, translation, and image-based clues.</p>
+        <a href="https://beiwen-app.github.io/" data-i18n="apps.beiwenLink">Visit Beiwen</a>
+      </li>
+      <li class="other-app-item">
+        <div class="other-app-item-heading">
+          <img class="other-app-icon" src="/app-icons/wristmark.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <h3 data-i18n="apps.wristMarkName">WristMark</h3>
+        </div>
+        <p data-i18n="apps.wristMarkDescription">A private meeting assistant for iPhone and Apple Watch, with wrist recording, highlight markers, offline transcription, and reminder and calendar drafts.</p>
+        <a href="https://wristmark-app.github.io/" data-i18n="apps.wristMarkLink">Visit WristMark</a>
+      </li>
+    </ul>
+  </section>
 
   <footer>
     <div style="margin-bottom: 1.5rem;">
