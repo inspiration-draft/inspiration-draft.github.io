@@ -22,7 +22,7 @@ const translations = {
     },
     feature2: {
       title: "Let offline AI<br>understand the image",
-      p1: "Offline AI helps you notice what is in the image and find extra inspiration or new ways to express the thought. Your image stays on your device.",
+      p1: "With Local AI, image analysis runs on your device. Attachments may sync through iCloud if enabled.",
       m1: "<strong>Get Image Content:</strong> Let offline AI describe what is in the image and open another way into the thought.",
       m2: "<strong>Insert into Document:</strong> Bring the useful context into the draft at the point where it matters.",
       m3: "<strong>Create Sticker:</strong> Use a derived form only when it helps the idea, without making it the point of the story.",
@@ -42,13 +42,13 @@ const translations = {
     },
     feature5: {
       title: "Keep creating<br>and keep it private",
-      p1: "<strong>Fully local:</strong> Suggestions and rewrites run on your iPhone instead of sending your unfinished ideas to a server.",
+      p1: "<strong>On-device AI:</strong> After you download Local AI, thinking and rewrites run on your iPhone. Drafts and attachments may sync through iCloud if enabled.",
       p2: "Your voice, your images, and the sparks that are still becoming ideas stay under your control."
     },
     privacy: {
-      title1: "Private offline AI",
+      title1: "On-device AI, ideas under your control",
       title2: "A quiet creative companion",
-      p1: "InspirationDraft is designed for people who want help without surrendering authorship. <strong>Suggestions and rewrites run on your device.</strong> No account, no tracking, no server-side draft processing."
+      p1: "InspirationDraft is designed for people who want help without surrendering authorship. <strong>Suggestions and rewrites run on your device after you download Local AI.</strong> No app account or third-party tracking SDKs. Drafts and attachments may sync through your iCloud account if enabled."
     },
     footer: {
       support: "Support",
@@ -78,7 +78,7 @@ const translations = {
     },
     feature2: {
       title: "让离线 AI<br>理解图片内容",
-      p1: "离线 AI 帮你看见图片里的内容，获得额外的灵感和表达方式。图片留在设备上，不会被上传。",
+      p1: "启用本地 AI 后，图片分析在设备端完成。若开启 iCloud，附件可能通过 iCloud 同步。",
       m1: "<strong>获取图片内容：</strong>让离线 AI 描述图片里的内容，打开进入想法的另一条路径。",
       m2: "<strong>插入到文档：</strong>把真正有用的上下文带到草稿需要它的位置。",
       m3: "<strong>生成贴纸：</strong>只有当派生形态有助于想法时才使用，不让它成为故事主角。",
@@ -98,13 +98,13 @@ const translations = {
     },
     feature5: {
       title: "继续创作<br>也继续保持私密",
-      p1: "<strong>完全本地：</strong>建议和改写都在 iPhone 上完成，不把尚未成形的想法交给服务器。",
+      p1: "<strong>设备端 AI：</strong>下载本地 AI 后，思考与改写在 iPhone 上完成。草稿和附件可能按你的 iCloud 设置同步。",
       p2: "你的声音、图片，以及仍在生长中的灵感火花，始终由你掌控。"
     },
     privacy: {
-      title1: "完全本地，真正私密",
+      title1: "本地 AI，灵感由你掌控",
       title2: "沉默的创作伙伴",
-      p1: "灵感树洞是给那些想要帮助、又不想交出作者感的人准备的。<strong>建议和改写都在设备端完成。</strong> 不用注册、没有追踪、也没有服务端内容处理。"
+      p1: "灵感树洞是给那些想要帮助、又不想交出作者感的人准备的。<strong>下载本地 AI 后，建议和改写在设备端完成。</strong> 无需注册账号，也不使用第三方追踪 SDK。若开启 iCloud，草稿和附件可能通过个人 iCloud 账户同步。"
     },
     footer: {
       support: "应用支持",
