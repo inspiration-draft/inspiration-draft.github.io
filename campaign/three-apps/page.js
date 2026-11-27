@@ -54,7 +54,7 @@ const copy = {
     modelNote: "Download and prepare the local model before using Beiwen offline.",
     wristmarkKicker: "Keep the meeting for later",
     wristmarkDescription: "Capture a meeting from Apple Watch or iPhone, then revisit its recording, transcript, and follow-up notes.",
-    appStoreLink: "View on the App Store",
+    appStoreLink: "View in App Store",
     separateLabel: "Available separately",
     closing: "Three independent apps for different moments. Choose what fits now. The InspirationDraft + Beiwen bundle will be available after App Store review.",
     privacy: "Privacy",
@@ -69,7 +69,7 @@ const copy = {
     wristmarkPrimary: "WristMark",
     wristmarkSecondary: "",
     languageLabel: "Switch to Chinese",
-    languageButton: "中文",
+    languageButton: "Chinese",
     heroAlt: "Three everyday app scenes: saving an idea, using Beiwen while traveling, and reviewing a WristMark meeting.",
     inspirationAlt: "An iPhone displays InspirationDraft idea cards beside a notebook with a glowing sprout.",
     beiwenAlt: "A traveler checks a phone displaying the Beiwen app at a station.",
@@ -85,6 +85,13 @@ function applyLanguage() {
   document.documentElement.lang = language === "zh" ? "zh-Hans" : "en";
   document.title = content.pageTitle;
   document.querySelector('meta[name="description"]').content = content.description;
+  document.querySelector('meta[property="og:title"]').content = content.pageTitle;
+  document.querySelector('meta[property="og:description"]').content = content.description;
+  document.querySelector('meta[property="og:locale"]').content = language === "zh" ? "zh_CN" : "en_US";
+  document.querySelector('meta[property="og:image:alt"]').content = content.heroAlt;
+  document.querySelector('meta[name="twitter:title"]').content = content.pageTitle;
+  document.querySelector('meta[name="twitter:description"]').content = content.description;
+  document.querySelector('meta[name="twitter:image:alt"]').content = content.heroAlt;
   document.querySelectorAll("[data-copy]").forEach((element) => {
     const key = element.dataset.copy.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
     const value = content[key];

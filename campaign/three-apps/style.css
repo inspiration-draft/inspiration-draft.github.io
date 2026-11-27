@@ -124,6 +124,9 @@ footer a:hover { text-decoration: underline; }
   .model-note, .separate-label { margin-left: 78px; }
   .beiwen-card .app-link { margin-bottom: 8px; }
 }
+@media (min-width: 851px) and (max-width: 1024px) {
+  .apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 520px) {
   .site-header, main, footer { width: min(100% - 24px, 460px); }
   .site-header { padding: 16px 0; }
@@ -139,8 +142,8 @@ footer a:hover { text-decoration: underline; }
   .app-card { display: flex; }
   .scene { aspect-ratio: 1.35 / 1; height: auto; }
   .app-detail { padding: 18px 18px 8px; }
-  .app-link { margin: 8px 18px 18px 91px; }
-  .model-note, .separate-label { margin-left: 91px; }
+  .app-link { align-self: stretch; margin: 8px 18px 18px; }
+  .model-note, .separate-label { margin-left: 18px; margin-right: 18px; }
   .closing-note { margin: 34px auto 48px; }
   footer { gap: 16px; font-size: .82rem; }
 }

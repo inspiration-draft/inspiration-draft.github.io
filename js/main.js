@@ -2,7 +2,7 @@
 const translations = {
   en: {
     nav: {
-      brand: "InspirationDraft · 灵感树洞",
+      brand: "InspirationDraft",
     },
     hero: {
       badge: "Available on iOS",
@@ -54,11 +54,33 @@ const translations = {
       support: "Support",
       privacy: "Privacy Policy",
       terms: "Terms of Use"
+    },
+    apps: {
+      title: "Explore our other apps",
+      campaignLink: "See our three-app collection",
+      lexisprigName: "LexiSprig",
+      lexisprigDescription: "Turn everyday scenes into multilingual word cards, short stories, and example sentences.",
+      lexisprigLink: "Visit LexiSprig",
+      displayPresetName: "DisplayPreset",
+      displayPresetDescription: "Save and restore your connected display configuration on macOS, with one click.",
+      displayPresetLink: "Visit DisplayPreset",
+      displayPilotName: "DisplayPilot",
+      displayPilotDescription: "Save and restore window layouts and app workspaces across your Mac displays.",
+      displayPilotLink: "Visit DisplayPilot",
+      scriptPaceName: "ScriptPace",
+      scriptPaceDescription: "A local-first voice-tracking teleprompter for Mac, with iPhone rehearsal and Apple Watch remote control.",
+      scriptPaceLink: "Visit ScriptPace",
+      beiwenName: "Beiwen",
+      beiwenDescription: "An offline-first emergency AI assistant for on-device questions, translation, and image-based clues.",
+      beiwenLink: "Visit Beiwen",
+      wristMarkName: "WristMark",
+      wristMarkDescription: "A private meeting assistant for iPhone and Apple Watch, with wrist recording, highlight markers, offline transcription, and reminder and calendar drafts.",
+      wristMarkLink: "Visit WristMark"
     }
   },
   zh: {
     nav: {
-      brand: "灵感树洞 (InspirationDraft)",
+      brand: "灵感树洞",
     },
     hero: {
       badge: "iOS 现已推出",
@@ -110,6 +132,28 @@ const translations = {
       support: "应用支持",
       privacy: "隐私政策",
       terms: "使用条款"
+    },
+    apps: {
+      title: "更多应用",
+      campaignLink: "查看三款 App 专题",
+      lexisprigName: "拾词贴",
+      lexisprigDescription: "拍下日常场景，把画面中的事物变成英、日、中文词卡和场景短文，帮你在真实语境中积累表达。",
+      lexisprigLink: "访问拾词贴",
+      displayPresetName: "DisplayPreset",
+      displayPresetDescription: "在 macOS 本机保存并一键恢复已连接显示器的配置。",
+      displayPresetLink: "访问 DisplayPreset",
+      displayPilotName: "DisplayPilot",
+      displayPilotDescription: "macOS 窗口布局与应用工作集工具，可保存并恢复多屏窗口环境。",
+      displayPilotLink: "访问 DisplayPilot",
+      scriptPaceName: "稿随",
+      scriptPaceDescription: "本地优先的 Mac 语音跟随提词器，支持 iPhone 排练和 Apple Watch 遥控。",
+      scriptPaceLink: "访问稿随",
+      beiwenName: "备问",
+      beiwenDescription: "离线优先的应急 AI 助理，可用本地模型进行问答、翻译和图片线索参考。",
+      beiwenLink: "访问备问",
+      wristMarkName: "时扣",
+      wristMarkDescription: "面向 iPhone 与智能手表的私密会议助手，支持抬腕录音、标记重点、本地离线转写，并把纪要整理为提醒与日历草稿。",
+      wristMarkLink: "访问时扣"
     }
   }
 };
@@ -118,10 +162,18 @@ let currentLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
 
 const pageMeta = {
   zh: {
-    title: "灵感树洞 (InspirationDraft) — 每一个想法，都值得生根发芽"
+    title: "灵感树洞 — 每一个想法，都值得生根发芽",
+    description: "随手留下灵感，准备好时再整理、继续发展；可选的离线 AI 可在设备端提供思路。",
+    locale: "zh_CN",
+    siteName: "灵感树洞",
+    imageAlt: "灵感树洞应用图标"
   },
   en: {
-    title: "InspirationDraft · 灵感树洞 — Every idea deserves to grow"
+    title: "InspirationDraft — Every idea deserves to grow",
+    description: "Capture ideas as they come, then organize and develop them when you're ready. Optional on-device AI offers creative directions.",
+    locale: "en_US",
+    siteName: "InspirationDraft",
+    imageAlt: "InspirationDraft app icon"
   }
 };
 
@@ -138,7 +190,7 @@ const screenshotLocaleFolders = {
 
 function toggleLang() {
   currentLang = currentLang === 'zh' ? 'en' : 'zh';
-  document.getElementById('lang-btn').innerText = currentLang === 'zh' ? 'English' : '中文';
+  document.getElementById('lang-btn').innerText = currentLang === 'zh' ? 'English' : 'Chinese';
   document.documentElement.lang = currentLang === 'zh' ? 'zh-Hans' : 'en';
   applyTranslations();
   updateMeta();
@@ -166,10 +218,25 @@ function applyTranslations() {
       el.innerHTML = translation;
     }
   });
+
+  document.querySelectorAll('[data-href-en][data-href-zh]').forEach((element) => {
+    const href = currentLang === 'zh' ? element.dataset.hrefZh : element.dataset.hrefEn;
+    element.setAttribute('href', href);
+  });
 }
 
 function updateMeta() {
-  document.title = pageMeta[currentLang].title;
+  const metadata = pageMeta[currentLang];
+  document.title = metadata.title;
+  document.querySelector('meta[name="description"]').content = metadata.description;
+  document.querySelector('meta[property="og:site_name"]').content = metadata.siteName;
+  document.querySelector('meta[property="og:title"]').content = metadata.title;
+  document.querySelector('meta[property="og:description"]').content = metadata.description;
+  document.querySelector('meta[property="og:image:alt"]').content = metadata.imageAlt;
+  document.querySelector('meta[property="og:locale"]').content = metadata.locale;
+  document.querySelector('meta[name="twitter:title"]').content = metadata.title;
+  document.querySelector('meta[name="twitter:description"]').content = metadata.description;
+  document.querySelector('meta[name="twitter:image:alt"]').content = metadata.imageAlt;
 }
 
 function updateBadge() {
@@ -189,7 +256,7 @@ function updateScreenshots() {
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('lang-btn').innerText = currentLang === 'zh' ? 'English' : '中文';
+  document.getElementById('lang-btn').innerText = currentLang === 'zh' ? 'English' : 'Chinese';
   document.documentElement.lang = currentLang === 'zh' ? 'zh-Hans' : 'en';
   applyTranslations();
   updateMeta();
